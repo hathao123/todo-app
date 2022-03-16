@@ -1,0 +1,52 @@
+@mixin inputStyle ($paddingX, $paddingY) {
+  padding: $paddingX $paddingY;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Bordered form */
+form {
+  border: 1px solid black;
+}
+
+.border {
+  border: none
+}
+
+/* Full-width inputs */
+input[type=text], textarea {
+  @include inputStyle(12px, 20px);
+}
+
+input[type=date] {
+  @include inputStyle(10px, 5px);
+}
+select {
+  @include inputStyle(12px, 5px);
+}
+
+.full-width {
+  width: 100%;
+}
+
+label {
+  display: block;
+}
+
+.detail {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.invalid-message {
+  color: #c50717;
+  font-size: 12px;
+  margin-top: 10px;
+}
+@media only screen and (max-width: 768px) {
+  .detail {
+    display: block;
+  }
+}

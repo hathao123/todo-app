@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  padding: 20px;
+  height: 100%;
+}
+
+.task-detail, .task-list {
+  width: 50%;
+  border: 1px solid black;
+}
+.border {
+  border-right: none;
+}
+@media only screen and (max-width: 768px) {
+  .container {
+    display: block;
+  }
+  .border {
+    border-bottom: none;
+    border-right: 1px solid black;
+  }
+}

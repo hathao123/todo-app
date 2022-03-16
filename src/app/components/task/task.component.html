@@ -1,0 +1,35 @@
+<form [class.border]="!isDetailInfo" (ngSubmit)="$event.preventDefault(); createOrUpdateTask()"
+  [formGroup]="taskForm">
+  <h2 class="title" *ngIf="!isDetailInfo">New Task</h2>
+  <div class="container">
+    <input class="full-width" type="text"placeholder="Add new task" [formControl]="titleControl">
+    <span class="invalid-message" *ngIf="titleControl.hasError('required') && titleControl.touched">
+      Title is required
+    </span>
+
+    <label class="mt-1"><b>Description</b></label>
+    <textarea class="full-width" rows="4" [formControl]="descriptionControl"></textarea>
+
+    <div class="detail">
+      <div class="full-width mr-1 mt-1">
+        <label><b>Due Date</b></label>
+        <input class="full-width" type="date" [formControl]="dueDateControl">
+        <span class="invalid-message" *ngIf="dueDateControl.hasError('invalidDueDate') && dueDateControl.touched">
+           Due Date is not the past
+        </span>
+      </div>
+
+      <div class="full-width mt-1">
+        <label><b>Priority</b></label>
+        <select class="full-width" [formControl]="priorityControl">
+          <option value="NORMAL">Normal</option>
+          <option value="LOW">Low</option>
+          <option value="HIGH">High</option>
+        </select>
+      </div>
+    </div>
+
+    <button class="full-width btn-add mt-2">{{!isDetailInfo ? 'Add' : 'Update'}}</button>
+  </div>
+</form>
+

@@ -1,0 +1,50 @@
+input[type=text] {
+  width: 100%;
+  margin-bottom: 16px;
+  padding: 12px 20px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.task-info {
+  width: 100%;
+}
+
+.task {
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+  border-bottom: none;
+
+  &-left {
+    align-self: center;
+    max-width: 65%;
+  }
+}
+
+.task-title {
+  word-break: break-word;
+}
+
+.end-line {
+  border-bottom: 1px solid black;
+}
+
+.bulk {
+  border-top: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  margin-top: 20px;
+  background-color: #d5d1d1;
+
+  &-left {
+    align-self: center;
+  }
+}
+.bulk-space {
+  margin-top: 85px;
+}
+
